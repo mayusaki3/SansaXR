@@ -1,49 +1,64 @@
-# ProjectSansa
+# SansaXR
 
-ProjectSansa（プロジェクトサンサ）は、VR / AR / MR / 非XR を横断する xR オープンプラットフォーム構想です。
+SansaXR は ProjectSansa ecosystem における XR runtime / OpenXR / realtime networking を担当するリポジトリです。
 
-「現実世界」「仮想世界」「理想」が交差する三叉をイメージして命名されています。
+ProjectSansa 全体構想、repository federation、共通方針は [ProjectSansa](https://github.com/mayusaki3/ProjectSansa) を正本とします。
+
+---
+
+## 主な責務
+
+- OpenXR based XR Runtime
+- HMD / Controller / Tracking integration
+- World Runtime
+- Multiplayer / Session / Realtime State Synchronization
+- Runtime-side SansaVRM integration
+- Interaction
+- Desktop Integration
+- Engine Integration
+
+認証・権利・来歴・経済・Portal は SansaSphere、SansaVRM format/schema/validator は SansaVRM の責務です。
+
+---
+
+## 現在の開発状態
+
+現在、旧実装を整理し、新しい SansaXR Runtime の技術検証を行っています。
+
+Demo 1 では O3DE と Godot を同一要件で実装・比較し、以下を検証します。
+
+- OpenXR
+- HMD / Controller Tracking
+- Multiplayer
+- Remote Head / Hand Synchronization
+- Disconnect / Reconnect
+- Runtime UGC
+- Dedicated / Headless Server
+- Performance
+- SansaXR Core / Engine Integration 境界
+
+Engine 共通抽象化は先行実装せず、各 Engine の native 実装結果から共通境界を抽出します。
 
 ---
 
 ## ドキュメント
 
-### 日本語ドキュメント目次
+- [日本語ドキュメント目次](./docs/ja-JP/目次.md)
+- [Demo 1 O3DE/Godot比較要求仕様](./docs/ja-JP/仕様/10_Demo/01_Demo1_O3DE_Godot比較要求仕様.md)
+- [Demo 1基本設計](./docs/ja-JP/仕様/10_Demo/02_Demo1基本設計.md)
+- [Demo 1検証環境仕様](./docs/ja-JP/仕様/10_Demo/03_Demo1検証環境仕様.md)
+- [Demo 1 O3DE/Godot比較テスト仕様](./docs/ja-JP/テスト仕様/10_Demo/01_Demo1_O3DE_Godot比較テスト仕様.md)
 
-- [docs/ja-JP/目次.md](./docs/ja-JP/目次.md)
-
-### 全体構想
-
-- [ProjectSansa全体構想](./docs/ja-JP/仕様/00_全体構想/01_ProjectSansa全体構想.md)
-
----
-
-## 主な構想領域
-
-- VR / AR / MR / 非XR 統合
-- OpenXR ベース xR 基盤
-- 分散サーバークラスタ
-- Webサービス連携
-- 統合認証
-- タイムキャプチャ
-- デスクトップ連携
-- VRSNS 間連携
-- AI / ロボット / MuJoCo 連携
+ドキュメントは HLDocS に基づいて管理します。
 
 ---
 
-## 開発方針
+## Worklog
 
-- ドキュメントは HLDocS ベースで管理
-- 仕様・テスト・コードの Traceability を重視
-- OpenXR を基盤としたマルチ Runtime 対応
-- 特定プラットフォームへの固定依存を避ける
-- オープンな拡張性を重視
+現在の作業状態は `LLM_Workspace/Worklog` を正本とします。
 
 ---
 
-## コミュニティ
+## License
 
-Discord
-
-https://discord.gg/wN67tdzrCT
+See [LICENSE](./LICENSE).

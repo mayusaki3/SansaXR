@@ -266,3 +266,8 @@ Godot側で `SXR-D1-FUNC-XR-001` が成立した後、以下へ進む。
 ---
 
 [目次](../../../目次.md) > マニュアル > 開発向け > Demo > Demo 1 Godot検証環境構築手順
+
+
+## 実機確認による補足
+
+Godot 4.7.2の `XRController3D` では、Quest 3の通常Controller用Trackerとして `left_hand` / `right_hand` を使用する。`/user/hand_tracker/left` / `/user/hand_tracker/right` はhand tracking用途であり、通常Controllerの指定には使用しない。

@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://bjvo181e6yutc"]
+
+[ext_resource type="Script" uid="uid://ba1ar8m68aotl" path="res://main.gd" id="1_ig7tw"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_w0ohd"]
+size = Vector3(0.08, 0.08, 0.15)
+
+[sub_resource type="BoxMesh" id="BoxMesh_h66la"]
+size = Vector3(0.08, 0.08, 0.15)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gbips"]
+size = Vector3(10, 0.1, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yl77l"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[node name="Main" type="Node3D" unique_id=1135226267]
+script = ExtResource("1_ig7tw")
+
+[node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=2017367134]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=1729489022]
+
+[node name="LeftController" type="XRController3D" parent="XROrigin3D" unique_id=452282333]
+tracker = &"left_hand"
+
+[node name="LeftHandMarker" type="MeshInstance3D" parent="XROrigin3D/LeftController" unique_id=1916610871]
+mesh = SubResource("BoxMesh_w0ohd")
+
+[node name="RightController" type="XRController3D" parent="XROrigin3D" unique_id=271455793]
+tracker = &"right_hand"
+
+[node name="RightHandMarker" type="MeshInstance3D" parent="XROrigin3D/RightController" unique_id=969978841]
+mesh = SubResource("BoxMesh_h66la")
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=652922319]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+mesh = SubResource("BoxMesh_gbips")
+
+[node name="FrontCube" type="MeshInstance3D" parent="." unique_id=1685371655]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -2)
+mesh = SubResource("BoxMesh_yl77l")
+
+[node name="LeftCube" type="MeshInstance3D" parent="." unique_id=1175170463]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.5, -2)
+mesh = SubResource("BoxMesh_yl77l")
+
+[node name="RightCube" type="MeshInstance3D" parent="." unique_id=107409748]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.5, -2)
+mesh = SubResource("BoxMesh_yl77l")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1290795125]
